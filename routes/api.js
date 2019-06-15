@@ -65,7 +65,7 @@ module.exports = function (app) {
         db.collection('library').find({_id: bookid}).toArray((err, r) => {
           expect(err).to.equal(null);
           if (!r.length) return res.send('no book exists');
-          json(r[0]);
+          res.json(r[0]);
         });
       })
     })
